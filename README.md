@@ -34,7 +34,7 @@ I wanted to automate the AIO settings and Nvidia GPU settings on startup. So the
 
 I followed the guide under the section "Automation and running at boot" from the liquidctl repository. Folowing the guide was helpful and it works, but I noticed that some extra things was needed for automation.
 
-First I needed to create a way for the "/etc/systemd/system/liquidcfg.service" file to wait for my Kraken device upon bootup. So the guide has a special guide for "Making systemd units wait for device". I followed this guide making the custom rules file and tried a few different settings, but wasn't quite able to get things to work. 
+First I needed to create a way for the "/etc/systemd/system/liquidcfg.service" file to wait for my Kraken device upon bootup. So the guide has a special guide for [Making systemd units wait for device](https://github.com/liquidctl/liquidctl/blob/main/docs/linux/making-systemd-units-wait-for-devices.md). I followed this guide making the custom rules file and tried a few different settings, but wasn't quite able to get things to work. 
 
 In the second portion of the guide I seen that the new device units was being added as dependencies to the service unit(displayed in the guide). From some random online blogs I seen someone use kraken.device without creating a custom rule... so I tried it. I created the file "/etc/systemd/system/liquidcfg.service" and added the following code:
 
